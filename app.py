@@ -123,9 +123,9 @@ class CoverageModel(db.Model):
     __tablename__ = 'SERVICE BUILD COVERAGES_SA'
     __table_args__ = TABLE_ARGS
     index = db.Column('INDEX',db.Integer, primary_key=True)
-    gbg = db.Column('GBG',db.String(255))
     country = db.Column('COUNTRY',db.String(255))
     shortname = db.Column('SHORTNAME',db.String(255))
+    gbg = db.Column('GBG',db.String(255))
     motion = db.Column('MOTION',db.String(255))
     ipsbuild = db.Column('IPSBUILD',db.String(255))
     tpsservice = db.Column('tpsservice',db.String(255))
@@ -136,9 +136,9 @@ class CoverageModel(db.Model):
 # the Python output for Coverages
 class CoverageOutSchema(Schema):
     index = Integer()
-    gbg = String()
     country = String()
     shortname = String()
+    gbg = String()
     motion = String()
     ipsbuild = String()
     tpsservice = String()
@@ -147,9 +147,9 @@ class CoverageOutSchema(Schema):
 
 # the Python input for coverages
 class CoverageInSchema(Schema):
-    gbg = String(required=True, validate=Length(0, 255))
     country = String(required=True, validate=Length(0, 255))
     shortname = String(required=True, validate=Length(0, 255))
+    gbg = String(required=True, validate=Length(0, 255))
     motion = String(required=True, validate=Length(0,255))
     ipsbuild = String(required=True, validate=Length(0,255))
     tpsservice = String(required=True, validate=Length(0,255))
